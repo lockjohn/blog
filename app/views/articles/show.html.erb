@@ -9,4 +9,18 @@
                 data: {confirm: "Are you sure?"} %></li>
 </ul>
 
+<h2>Add a comment:</h2>
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    <p>
+        <%= form.label :commenter %><br>
+        <%= form.text_field :commenter%>
+    </p>
+    <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
 <%# The method: :delete option causes the link to make a DELETE request instead of a GET request. The data: { confirm: "Are you sure?" } option causes a confirmation dialog to appear when the link is clicked. If the user cancels the dialog, the request is aborted. %>
