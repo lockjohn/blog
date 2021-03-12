@@ -55,7 +55,7 @@ will be rendered with error messages.
 
   private
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :status)
   end
 end
 =begin
